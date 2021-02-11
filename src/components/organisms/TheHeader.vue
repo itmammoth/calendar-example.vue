@@ -6,10 +6,9 @@
 
 <script>
 export default {
-  name: "Header"
+  name: 'TheHeader',
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
 </style>

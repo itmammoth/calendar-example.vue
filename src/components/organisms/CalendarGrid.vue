@@ -6,10 +6,9 @@
 
 <script>
 export default {
-  name: "CalendarGrid"
+  name: 'CalendarGrid',
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
 </style>

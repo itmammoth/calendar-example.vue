@@ -5,11 +5,13 @@
 </template>
 
 <script>
-import CalendarView from "@/components/templates/CalendarView.vue";
+import CalendarView from '@/components/templates/CalendarView.vue';
 
 export default {
-  name: "MainPage",
-  components: { CalendarView }
+  name: 'HomePage',
+  components: {
+    CalendarView,
+  },
 }
 </script>
 

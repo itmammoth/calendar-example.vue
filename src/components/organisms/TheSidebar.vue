@@ -1,15 +1,14 @@
 <template>
   <div>
-    サイドメニュー
+    サイドバー
   </div>
 </template>
 
 <script>
 export default {
-  name: "SideMenu"
+  name: 'TheSidebar',
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
 </style>

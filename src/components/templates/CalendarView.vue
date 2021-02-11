@@ -1,26 +1,25 @@
 <template>
   <div>
-    <Header/>
-    <SideMenu/>
+    <TheHeader/>
+    <TheSidebar/>
     <CalendarGrid/>
   </div>
 </template>
 
 <script>
-import SideMenu from "@/components/organisms/SideMenu.vue";
+import TheHeader from "@/components/organisms/TheHeader.vue";
+import TheSidebar from "@/components/organisms/TheSidebar.vue";
 import CalendarGrid from "@/components/organisms/CalendarGrid.vue";
-import Header from "@/components/organisms/Header.vue";
 
 export default {
-  name: "CalendarView",
+  name: 'CalendarView',
   components: {
-    Header,
+    TheSidebar,
+    TheHeader,
     CalendarGrid,
-    SideMenu,
-  }
+  },
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
 </style>

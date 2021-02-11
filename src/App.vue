@@ -1,21 +1,10 @@
 <template>
   <div id="app">
-    <MainPage/>
+    <RouterView/>
   </div>
 </template>
 
-<script>
-import MainPage from "@/components/pages/MainPage.vue";
-
-export default {
-  name: 'App',
-  components: {
-    MainPage,
-  }
-}
-</script>
-
-<style>
+<style lang="scss">
 #app {
 }
 </style>
