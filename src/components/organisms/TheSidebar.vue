@@ -1,6 +1,10 @@
 <template>
   <div>
-    サイドバー
+    <div>
+      <div>カレンダー一覧</div>
+      <div>[ ] hoge</div>
+      <div>[ ] fuga</div>
+    </div>
   </div>
 </template>
 
