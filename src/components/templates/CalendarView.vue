@@ -3,7 +3,10 @@
     <div class="container">
       <TheHeader class="header"/>
       <div class="content">
-        <TheSidebar class="sidebar"/>
+        <TheSidebar
+            class="sidebar"
+            :calendars="calendars"
+        />
         <CalendarGrid class="calendar"/>
       </div>
     </div>
@@ -11,18 +14,28 @@
 </template>
 
 <script>
-import TheHeader from "@/components/organisms/TheHeader.vue";
-import TheSidebar from "@/components/organisms/TheSidebar.vue";
-import CalendarGrid from "@/components/organisms/CalendarGrid.vue";
+import TheHeader from '@/components/organisms/TheHeader.vue';
+import TheSidebar from '@/components/organisms/TheSidebar.vue';
+import CalendarGrid from '@/components/organisms/CalendarGrid.vue';
+// import LifecycleLogger from '@/mixins/LifecycleLogger.js';
 
 export default {
   name: 'CalendarView',
+  // mixins: [
+  //   LifecycleLogger('CalendarView'),
+  // ],
   components: {
     TheSidebar,
     TheHeader,
     CalendarGrid,
   },
-}
+  props: {
+    calendars: {
+      type: Array,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
