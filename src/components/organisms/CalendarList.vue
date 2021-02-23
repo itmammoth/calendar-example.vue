@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import CalendarListItem from '@/components/molecules/CalendarListItem.vue';
+import CalendarListItem from '@/components/molecules/CalendarListItem.vue'
 
 export default {
   name: 'CalendarList',
@@ -19,10 +19,10 @@ export default {
   props: {
     calendars: {
       type: Array,
-      required: true,
-    },
-  },
-};
+      required: true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

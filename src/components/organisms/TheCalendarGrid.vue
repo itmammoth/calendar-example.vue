@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'CalendarGrid',
+  name: 'TheCalendarGrid'
 }
 </script>
 

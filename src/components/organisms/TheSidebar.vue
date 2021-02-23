@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import CalendarList from '@/components/organisms/CalendarList.vue';
+import CalendarList from '@/components/organisms/CalendarList.vue'
 // import LifecycleLogger from '@/mixins/LifecycleLogger.js';
 
 export default {
@@ -19,10 +19,10 @@ export default {
   props: {
     calendars: {
       type: Array,
-      required: true,
-    },
-  },
-};
+      required: true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -2,22 +2,22 @@
  * CalendarAPIモック
  */
 
-export async function fetchCalendars() {
+export async function fetchCalendars () {
   return [
     {
       id: 1,
       name: 'プライベート',
-      visible: true,
+      visible: true
     },
     {
       id: 2,
       name: '仕事',
-      visible: true,
+      visible: true
     },
     {
       id: 3,
       name: '記念日',
-      visible: false,
-    },
+      visible: false
+    }
   ]
 }

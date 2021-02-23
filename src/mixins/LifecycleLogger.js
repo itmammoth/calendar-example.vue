@@ -1,51 +1,51 @@
 export default function (name) {
   const label = `[${name}]`
   return {
-    beforeCreate() {
+    beforeCreate () {
       console.log(`${label} beforeCreate`)
     },
-    created() {
+    created () {
       console.log(`${label} created`)
     },
-    beforeMount() {
+    beforeMount () {
       console.log(`${label} beforeMount`)
     },
-    mounted() {
+    mounted () {
       console.log(`${label} mounted`)
     },
-    beforeUpdate() {
+    beforeUpdate () {
       console.log(`${label} beforeUpdate`)
     },
-    updated() {
+    updated () {
       console.log(`${label} updated`)
     },
-    activated() {
+    activated () {
       console.log(`${label} activated`)
     },
-    deactivated() {
+    deactivated () {
       console.log(`${label} deactivated`)
     },
-    beforeDestroy() {
+    beforeDestroy () {
       console.log(`${label} beforeDestroy`)
     },
-    destroyed() {
+    destroyed () {
       console.log(`${label} destroyed`)
     },
-    errorCaptured(err, vm, info) {
+    errorCaptured (err, vm, info) {
       console.log(`${label} errorCaptured`)
       console.log(err, vm, info)
     },
-    beforeRouteEnter(to, from, next) {
+    beforeRouteEnter (to, from, next) {
       console.log(`${label} beforeRouteEnter`)
       next()
     },
-    beforeRouteUpdate(to, from, next) {
+    beforeRouteUpdate (to, from, next) {
       console.log(`${label} beforeRouteUpdate`)
       next()
     },
-    beforeRouteLeave(to, from, next) {
+    beforeRouteLeave (to, from, next) {
       console.log(`${label} beforeRouteLeave`)
       next()
-    },
+    }
   }
 }

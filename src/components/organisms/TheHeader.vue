@@ -5,7 +5,7 @@
         <h1>calendar-example.vue</h1>
         <div>←</div>
         <div>→</div>
-        <div>2021年2月</div>
+        <div>{{ thisMonth }}</div>
       </div>
       <div class="right">
         <a href="https://github.com/itmammoth/calendar-example.vue">github</a>
@@ -17,6 +17,17 @@
 <script>
 export default {
   name: 'TheHeader',
+  props: {
+    today: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    thisMonth () {
+      return this.today.format('YYYY年MM月')
+    }
+  }
 }
 </script>
 

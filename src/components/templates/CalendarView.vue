@@ -1,41 +1,48 @@
 <template>
   <div>
     <div class="container">
-      <TheHeader class="header"/>
+      <TheHeader
+          :today="today"
+          class="header"
+      />
       <div class="content">
         <TheSidebar
-            class="sidebar"
             :calendars="calendars"
+            class="sidebar"
         />
-        <CalendarGrid class="calendar"/>
+        <TheCalendarGrid class="calendar"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import TheHeader from '@/components/organisms/TheHeader.vue';
-import TheSidebar from '@/components/organisms/TheSidebar.vue';
-import CalendarGrid from '@/components/organisms/CalendarGrid.vue';
-// import LifecycleLogger from '@/mixins/LifecycleLogger.js';
+import TheHeader from '@/components/organisms/TheHeader.vue'
+import TheSidebar from '@/components/organisms/TheSidebar.vue'
+import TheCalendarGrid from '@/components/organisms/TheCalendarGrid.vue'
+// import LifecycleLogger from '@/mixins/LifecycleLogger.js'
 
 export default {
   name: 'CalendarView',
   // mixins: [
-  //   LifecycleLogger('CalendarView'),
+  //   LifecycleLogger('CalendarView')
   // ],
   components: {
     TheSidebar,
     TheHeader,
-    CalendarGrid,
+    TheCalendarGrid
   },
   props: {
+    today: {
+      type: Object,
+      required: true
+    },
     calendars: {
       type: Array,
-      required: true,
-    },
-  },
-};
+      required: true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -13,10 +13,10 @@ export default {
   props: {
     calendar: {
       type: Object,
-      required: true,
-    },
-  },
-};
+      required: true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
