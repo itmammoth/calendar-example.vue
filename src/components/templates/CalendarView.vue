@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <TheHeader
-          :month.sync="month"
+          :beginningOfMonth.sync="beginningOfMonth"
           class="header"
       />
       <div class="content">
@@ -11,7 +11,7 @@
             class="sidebar"
         />
         <TheCalendarGrid
-            :month="month"
+            :beginningOfMonth="beginningOfMonth"
             class="calendar"
         />
       </div>
@@ -44,7 +44,7 @@ export default {
   },
   data () {
     return {
-      month: dayjs().startOf('month')
+      beginningOfMonth: dayjs().startOf('month')
     }
   }
 }

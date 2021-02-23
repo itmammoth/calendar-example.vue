@@ -5,9 +5,9 @@
         :style="styleVars"
     >
       <CalendarGridCell
-          v-for="(date, i) in dates"
+          v-for="(calendarDate, i) in calendarDates"
           :key="i"
-          :date="date"
+          :calendarDate="calendarDate"
       />
     </div>
   </div>
@@ -23,14 +23,31 @@ export default {
   name: 'TheCalendarGrid',
   components: { CalendarGridCell },
   props: {
-    month: {
+    beginningOfMonth: {
       type: Object,
       required: true
     }
   },
   computed: {
-    dates () {
-      return GRID_COLUMNS * GRID_ROWS
+    endOfMonth () {
+      return this.beginningOfMonth.endOf('month')
+    },
+    calendarDates () {
+      const dates = []
+      // 前月分
+      const dateCountInPreviousMonth = this.beginningOfMonth.day() > 0 ? this.beginningOfMonth.day() : 7
+      for (let i = dateCountInPreviousMonth; i > 0; i--) {
+        dates.push({ date: this.beginningOfMonth.add(-i, 'day'), isCurrentMonth: false })
+      }
+      // 当月分
+      for (let i = 0; i < this.endOfMonth.date(); i++) {
+        dates.push({ date: this.beginningOfMonth.add(i, 'day'), inCurrentMonth: true })
+      }
+      // 翌月分
+      for (let i = 0; dates.length < GRID_COLUMNS * GRID_ROWS; i++) {
+        dates.push({ date: this.endOfMonth.add(1 + i, 'day'), inCurrentMonth: false })
+      }
+      return dates
     },
     styleVars () {
       return {
@@ -46,7 +63,7 @@ export default {
 .container {
   display: grid;
   height: 100%;
-  // JSと連動する値は:styleで渡す
+  // TIPS: JSと連動する値は:styleで渡す
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   grid-template-rows: repeat(var(--grid-rows), 1fr);
 }

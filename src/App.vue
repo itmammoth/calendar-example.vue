@@ -4,7 +4,12 @@
   </div>
 </template>
 
+<script>
+</script>
+
 <style lang="scss">
+@import "~modern-css-reset";
+
 body {
   margin: 0;
 }

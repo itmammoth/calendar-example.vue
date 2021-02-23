@@ -6,7 +6,7 @@
         <CalendarShiftButtons
             @shift="shiftMonth"
         />
-        <div>{{ thisMonth }}</div>
+        <div>{{ currentMonth }}</div>
       </div>
       <div class="right">
         <a href="https://github.com/itmammoth/calendar-example.vue">github</a>
@@ -22,19 +22,19 @@ export default {
   name: 'TheHeader',
   components: { CalendarShiftButtons },
   props: {
-    month: {
+    beginningOfMonth: {
       type: Object,
       required: true
     }
   },
   computed: {
-    thisMonth () {
-      return this.month.format('YYYY年MM月')
+    currentMonth () {
+      return this.beginningOfMonth.format('YYYY年MM月')
     }
   },
   methods: {
     shiftMonth (amount) {
-      this.$emit('update:month', this.month.add(amount, 'month'))
+      this.$emit('update:beginningOfMonth', this.beginningOfMonth.add(amount, 'month'))
     }
   }
 }
