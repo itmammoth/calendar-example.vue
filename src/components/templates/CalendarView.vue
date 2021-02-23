@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <TheHeader
-          :today="today"
+          :month.sync="month"
           class="header"
       />
       <div class="content">
@@ -10,13 +10,17 @@
             :calendars="calendars"
             class="sidebar"
         />
-        <TheCalendarGrid class="calendar"/>
+        <TheCalendarGrid
+            :month="month"
+            class="calendar"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import dayjs from 'dayjs'
 import TheHeader from '@/components/organisms/TheHeader.vue'
 import TheSidebar from '@/components/organisms/TheSidebar.vue'
 import TheCalendarGrid from '@/components/organisms/TheCalendarGrid.vue'
@@ -33,13 +37,14 @@ export default {
     TheCalendarGrid
   },
   props: {
-    today: {
-      type: Object,
-      required: true
-    },
     calendars: {
       type: Array,
       required: true
+    }
+  },
+  data () {
+    return {
+      month: dayjs().startOf('month')
     }
   }
 }

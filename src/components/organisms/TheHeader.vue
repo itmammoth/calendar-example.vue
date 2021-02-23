@@ -3,8 +3,9 @@
     <div class="container">
       <div class="left">
         <h1>calendar-example.vue</h1>
-        <div>←</div>
-        <div>→</div>
+        <CalendarShiftButtons
+            @shift="shiftMonth"
+        />
         <div>{{ thisMonth }}</div>
       </div>
       <div class="right">
@@ -15,17 +16,25 @@
 </template>
 
 <script>
+import CalendarShiftButtons from '@/components/molecules/CalendarShiftButtons.vue'
+
 export default {
   name: 'TheHeader',
+  components: { CalendarShiftButtons },
   props: {
-    today: {
+    month: {
       type: Object,
       required: true
     }
   },
   computed: {
     thisMonth () {
-      return this.today.format('YYYY年MM月')
+      return this.month.format('YYYY年MM月')
+    }
+  },
+  methods: {
+    shiftMonth (amount) {
+      this.$emit('update:month', this.month.add(amount, 'month'))
     }
   }
 }

@@ -1,14 +1,12 @@
 <template>
   <div>
     <CalendarView
-        :today="today"
         :calendars="calendars"
     />
   </div>
 </template>
 
 <script>
-import dayjs from 'dayjs'
 import CalendarView from '@/components/templates/CalendarView.vue'
 // import LifecycleLogger from '@/mixins/LifecycleLogger.js';
 import { fetchCalendars } from '@/apis/calendar.js'
@@ -23,7 +21,6 @@ export default {
   },
   data () {
     return {
-      today: dayjs(),
       calendars: []
     }
   },
