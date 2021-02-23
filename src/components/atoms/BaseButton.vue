@@ -1,7 +1,9 @@
 <template>
-  <button @click="click">
-    <slot></slot>
-  </button>
+  <span>
+    <button class="container" @click="click">
+      <slot></slot>
+    </button>
+  </span>
 </template>
 
 <script>
@@ -16,4 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container:hover {
+  cursor: pointer;
+}
 </style>
